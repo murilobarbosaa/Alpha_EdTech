@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+button {
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#counterList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-right: 35px;
+}
+
+button.counterButton {
+    cursor: pointer;
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+button.counterButton.minus {
+    background-color: #e74c3c;
+}
+
+button.counterButton.plus {
+    background-color: #3498db;
+}
+
+span {
+    font-size: 20px;
+    margin: 0 10px;
+}

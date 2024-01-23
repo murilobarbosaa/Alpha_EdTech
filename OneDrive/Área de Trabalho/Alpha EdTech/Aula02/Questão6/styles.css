@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin: 3px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.botoes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    margin-top: 10px;
+    margin-left: 27px;
+    margin-bottom: 10px;
+}
+
+.botaoRosa {
+    background-color: pink;
+}
+
+.botaoVerde {
+    background-color: rgb(131, 218, 131);
+}
+
+.botaoAzul {
+    background-color: rgb(88, 188, 210);
+}
+
+.botaoMarrom {
+    background-color: brown;
+}
+
+#principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 230px;
+}
+
+#fundo, #fonte {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#lorem {
+    border: 1px solid black;
+    margin-left: 50px;
+    width: 400px;
+    height: 100px;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Agenda</title>
+</head>
+<body>
+
+  <div id="taskInput">
+    <label for="taskName">Nome da Tarefa:</label>
+    <input type="text" id="taskName" placeholder="Digite o nome da tarefa">
+    
+    <label for="taskDate" id="data">Data da Tarefa:</label>
+    <input type="date" id="taskDate">
+    
+    <button onclick="addTask()">Adicionar Tarefa</button>
+  </div>
+
+  <div id="daysOfWeek">
+    <div class="day" id="domingo">Domingo</div>
+    <div class="day" id="segunda">Segunda</div>
+    <div class="day" id="terca">Terça</div>
+    <div class="day" id="quarta">Quarta</div>
+    <div class="day" id="quinta">Quinta</div>
+    <div class="day" id="sexta">Sexta</div>
+    <div class="day" id="sabado">Sábado</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

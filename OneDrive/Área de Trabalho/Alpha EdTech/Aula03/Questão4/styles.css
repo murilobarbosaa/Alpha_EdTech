@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+form {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+input {
+    width: 60%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #00142A;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+button {
+    width: 40%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#formulario {
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    color: #00142A;
+    background-color: #D9ECFF;
+    border: 2px solid #00142A;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#peso {
+    margin-bottom: 10px;
+}
+
+#resultadoIMC {
+    margin-bottom: 10px;
+}
+
+.texto {
+    margin-bottom: 5px;
+}

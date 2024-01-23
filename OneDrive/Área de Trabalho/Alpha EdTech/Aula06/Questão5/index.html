@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Quiz Creator</title>
+</head>
+
+<body>
+    <div id="quiz-container">
+        <div id="question-form">
+            <h2>Adicionar Questão</h2>
+            <label for="question">Enunciado:</label>
+            <input type="text" id="question" required>
+
+            <label for="option1">Opção 1:</label>
+            <input type="text" id="option1" required>
+            <label class="checkbox-label">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="correct1">
+                </div>
+                <span>Gabarito</span>
+            </label>
+
+            <label for="option2">Opção 2:</label>
+            <input type="text" id="option2" required>
+            <label class="checkbox-label">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="correct2">
+                </div>
+                <span>Gabarito</span>
+            </label>
+
+            <label for="option3">Opção 3:</label>
+            <input type="text" id="option3" required>
+            <label class="checkbox-label">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="correct3">
+                </div>
+                <span>Gabarito</span>
+            </label>
+
+            <button onclick="addQuestion()">Adicionar</button>
+            <p id="error-message" class="error-message"></p>
+        </div>
+
+        <div id="quiz-display"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

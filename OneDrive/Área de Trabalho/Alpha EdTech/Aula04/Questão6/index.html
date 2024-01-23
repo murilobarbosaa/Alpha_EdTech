@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de produtos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Cadastro de produtos</h1>
+
+    <form action="index.php" method="post">
+        <input type="text" name="nome" placeholder="Nome do produto">
+        <input type="text" name="imagem" placeholder="Imagem do produto">
+        <button type="submit">Cadastrar</button>
+    
+        <select name="produto"></select>
+    
+        <button type="button" onclick="exibirProduto()">Exibir</button>
+    
+        <div id="nome-produto"></div>
+        <img id="imagem-produto" src="">
+    </form>    
+
+    <script src="script.js"></script>
+</body>
+
+</html>
