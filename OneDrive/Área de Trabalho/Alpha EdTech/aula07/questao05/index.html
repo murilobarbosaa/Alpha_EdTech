@@ -3,12 +3,53 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Aula07 - Questão 5</title>
 </head>
 
 <body>
+    <h1>Bloco de Notas</h1>
+
+    <form id="styleForm">
+        <label for="fontSize">Tamanho da Fonte:</label>
+        <input type="text" id="fontSize" name="fontSize">
+
+        <label for="fontFamily">Família da Fonte:</label>
+        <select id="fontFamily" name="fontFamily">
+            <option value="Arial">Arial</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Courier New">Courier New</option>
+        </select>
+
+        <label for="backgroundColor">Cor de Fundo:</label>
+        <input type="color" id="backgroundColor" name="backgroundColor">
+
+        <button type="button" onclick="applyStyles()">Aplicar Estilos</button>
+        <button type="button" id="exportButton">Exportar</button>
+        <button type="button" id="importButton">Importar</button>
+    </form>
+
+    <textarea id="noteArea"></textarea>
+
+    <div id="exportModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('exportModal')">&times;</span>
+            <h2>Exportar Dados</h2>
+            <textarea id="exportTextarea" readonly></textarea>
+        </div>
+    </div>
+
+    <div id="importModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('importModal')">&times;</span>
+            <h2>Importar Dados</h2>
+            <p id="importError" style="color: red;"></p>
+            <textarea id="importTextarea"></textarea>
+            <button id="importOkButton">OK</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
