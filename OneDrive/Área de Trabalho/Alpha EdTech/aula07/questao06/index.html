@@ -9,6 +9,22 @@
 </head>
 
 <body>
+    <h1>Lembretes Diários</h1>
+
+    <div id="reminderForm">
+        <label for="reminderText">Lembrete:</label>
+        <input type="text" id="reminderText">
+
+        <label for="reminderDate">Data do Lembrete:</label>
+        <input type="date" id="reminderDate">
+
+        <button onclick="addReminder()">Adicionar</button>
+    </div>
+
+    <button onclick="showTodayReminders()">Mostrar lembretes de hoje</button>
+
+    <div id="todayReminders" class="reminder-list"></div>
+
     <script src="script.js"></script>
 </body>
 

@@ -1,0 +1,19 @@
+body {
+    margin: 20px;
+}
+
+#reminderForm {
+    margin-bottom: 20px;
+}
+
+.reminder-list {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.reminder-item {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
