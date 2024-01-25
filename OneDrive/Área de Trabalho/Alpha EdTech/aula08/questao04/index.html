@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Receitas Culinárias</title>
+</head>
+
+<body>
+    <div id="recipe-container">
+        <!-- Initial card -->
+        <div class="recipe-card" data-index="0">
+            <div class="recipe-header">
+                <span class="recipe-title">Sem Título</span>
+                <span class="delete-btn" onclick="deleteRecipe(0)">Deletar</span>
+            </div>
+        </div>
+        <!-- Add Recipe Button -->
+        <div class="add-btn" onclick="addRecipe()">+</div>
+    </div>
+    <!-- Recipe Editor -->
+    <div id="recipe-editor" style="display: none;">
+        <input type="text" id="title-input" value="Sem Título">
+        <label for="ingredients-textarea">Ingredientes</label>
+        <textarea id="ingredients-textarea"></textarea>
+        <label for="preparation-textarea">Modo de preparo</label>
+        <textarea id="preparation-textarea"></textarea>
+        <button onclick="deleteCurrentRecipe()">Deletar</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container-galeria {
+    text-align: center;
+}
+
+input,
+button {
+    padding: 10px;
+    margin: 5px;
+}
+
+img {
+    max-width: 300px;
+    max-height: 300px;
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    padding: 5px;
+    background-color: #f1f1f1;
+}
+
+/* Adicione um espaçamento entre os botões */
+button {
+    margin-left: 5px;
+}
+
+/* Torne o contêiner da imagem responsivo e adicione uma borda */
+#container-imagem {
+    max-width: 80%;
+    margin: 20px auto;
+    border: 2px solid #333;
+    box-sizing: border-box;
+    overflow: hidden;
+}
