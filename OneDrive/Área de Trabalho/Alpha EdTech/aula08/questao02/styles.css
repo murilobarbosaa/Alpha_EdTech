@@ -13,8 +13,7 @@ body {
     text-align: center;
 }
 
-input,
-button {
+input, button {
     padding: 10px;
     margin: 5px;
 }
@@ -30,12 +29,10 @@ img {
     background-color: #f1f1f1;
 }
 
-/* Adicione um espaçamento entre os botões */
 button {
     margin-left: 5px;
 }
 
-/* Torne o contêiner da imagem responsivo e adicione uma borda */
 #container-imagem {
     max-width: 80%;
     margin: 20px auto;
