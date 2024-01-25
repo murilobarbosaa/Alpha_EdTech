@@ -1,0 +1,39 @@
+.container {
+    margin: 50px auto;
+    width: 60%;
+    text-align: center;
+    margin-top: 270px;
+}
+
+label {
+    display: inline-block;
+    width: 80px;
+}
+
+input {
+    padding: 5px;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 8px 20px;
+    background-color: #ffa2a2;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ff2323;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
