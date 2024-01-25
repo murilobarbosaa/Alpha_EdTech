@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Aula08 - Questão 3</title>
+</head>
+
+<body>
+
+    <div class="section">
+        <h2>Adicionar Lembrete</h2>
+        <label for="titleInput">Título:</label>
+        <input type="text" id="titleInput" placeholder="Digite o título...">
+        <label for="dateInput">Data:</label>
+        <input type="date" id="dateInput">
+        <button onclick="addReminder()">Adicionar</button>
+    </div>
+
+    <div class="section">
+        <h2>Mostrar Lembretes</h2>
+        <label for="showDateInput">Escolha a data:</label>
+        <input type="date" id="showDateInput">
+        <button onclick="showReminders()">Mostrar Lembretes</button>
+        <ul id="reminderList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
