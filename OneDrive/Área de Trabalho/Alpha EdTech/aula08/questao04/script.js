@@ -70,7 +70,7 @@ function renderRecipes() {
         deleteBtn.classList.add("delete-btn");
         deleteBtn.textContent = "Deletar";
         deleteBtn.onclick = (event) => {
-            event.stopPropagation(); // Prevent triggering editRecipe
+            event.stopPropagation();
             deleteRecipe(index);
         };
 
@@ -88,5 +88,4 @@ function renderRecipes() {
     recipeContainer.appendChild(addBtn);
 }
 
-// Initial rendering
 renderRecipes();
