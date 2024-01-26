@@ -9,7 +9,6 @@ const editProductForm = document.getElementById('edit-product-form');
 
 let products = [];
 
-// Load products from local storage
 if (localStorage.getItem('products')) {
     products = JSON.parse(localStorage.getItem('products'));
     renderProducts();
@@ -84,7 +83,6 @@ productTableBody.addEventListener('click', function (e) {
     }
 });
 
-// Modal close functionality
 const modals = document.querySelectorAll('.modal');
 modals.forEach(modal => {
     const closeBtn = modal.querySelector('.close');
