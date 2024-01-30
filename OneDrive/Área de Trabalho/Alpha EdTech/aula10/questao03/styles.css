@@ -1,0 +1,151 @@
+body {
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 400px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.form {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #333333;
+}
+
+#cidadeInput {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #cccccc;
+}
+
+#buscarButton {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#buscarButton:hover {
+    background-color: #0056b3;
+}
+
+#resultado {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#resultado p {
+    margin: 10px 0;
+    color: #333333;
+}
+
+#resultado strong {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+.filters label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.filters input[type="number"] {
+    width: 100px;
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.filters button {
+    padding: 8px 14px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.filters button:last-child {
+    margin-right: 0;
+}
+
+.filters button:hover {
+    background-color: #0056b3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+table td {
+    background-color: #fff;
+}
+
+table tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}

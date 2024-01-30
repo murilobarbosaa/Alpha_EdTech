@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Lista de Filmes</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Lista de Filmes</h1>
+        <div class="filters">
+            <label for="minBudget">Orçamento Mínimo:</label>
+            <input type="number" id="minBudget">
+            <label for="maxBudget">Orçamento Máximo:</label>
+            <input type="number" id="maxBudget">
+            <button onclick="filterMovies()">Filtrar</button>
+            <button onclick="sortMovies('asc')">Ordenar por Orçamento Crescente</button>
+            <button onclick="sortMovies('desc')">Ordenar por Orçamento Decrescente</button>
+        </div>
+        <table id="moviesTable">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Diretor</th>
+                    <th>Gênero</th>
+                    <th>Ano</th>
+                    <th>Orçamento</th>
+                </tr>
+            </thead>
+            <tbody id="moviesList">
+            </tbody>
+        </table>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
