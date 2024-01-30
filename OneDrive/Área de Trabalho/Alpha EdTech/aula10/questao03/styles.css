@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    width: 400px;
+    width: 800px;
     background-color: #ffffff;
     padding: 30px;
     border-radius: 8px;
@@ -29,101 +29,25 @@ h1 {
 label {
     font-weight: bold;
     color: #333333;
-}
-
-#cidadeInput {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    border: 1px solid #cccccc;
-}
-
-#buscarButton {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#buscarButton:hover {
-    background-color: #0056b3;
-}
-
-#resultado {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#resultado p {
-    margin: 10px 0;
-    color: #333333;
-}
-
-#resultado strong {
-    font-weight: bold;
-    margin-right: 5px;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f8f8f8;
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.filters {
-    margin-bottom: 20px;
-}
-
-.filters label {
-    font-weight: bold;
     margin-right: 10px;
 }
 
-.filters input[type="number"] {
-    width: 100px;
+input[type="number"] {
     padding: 5px;
-    margin-right: 10px;
-    border-radius: 5px;
+    border-radius: 4px;
     border: 1px solid #ccc;
 }
 
-.filters button {
-    padding: 8px 14px;
+#filtrarButton {
+    padding: 8px 16px;
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    outline: none;
 }
 
-.filters button:last-child {
-    margin-right: 0;
-}
-
-.filters button:hover {
+#filtrarButton:hover {
     background-color: #0056b3;
 }
 
@@ -132,20 +56,14 @@ table {
     border-collapse: collapse;
 }
 
-table th, table td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+th,
+td {
+    padding: 8px;
     text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
-table th {
+th {
     background-color: #f2f2f2;
-}
-
-table td {
-    background-color: #fff;
-}
-
-table tr:nth-child(even) td {
-    background-color: #f9f9f9;
+    color: #333333;
 }

@@ -5,36 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Lista de Filmes</title>
+    <title>Aula 10 - Questão 3</title>
+    <style>
+        /* Estilos para os botões de ordenação */
+        #ordenarPorBudgetAsc,
+        #ordenarPorBudgetDesc {
+            margin-right: 10px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>Lista de Filmes</h1>
-        <div class="filters">
+        <h1>Filmes</h1>
+        <div class="form">
             <label for="minBudget">Orçamento Mínimo:</label>
             <input type="number" id="minBudget">
             <label for="maxBudget">Orçamento Máximo:</label>
             <input type="number" id="maxBudget">
-            <button onclick="filterMovies()">Filtrar</button>
-            <button onclick="sortMovies('asc')">Ordenar por Orçamento Crescente</button>
-            <button onclick="sortMovies('desc')">Ordenar por Orçamento Decrescente</button>
+            <button id="filtrarButton">Filtrar</button>
         </div>
-        <table id="moviesTable">
+        <button id="ordenarPorBudgetAsc" class="ordenarButton">Ordenar por Orçamento (Crescente)</button>
+        <button id="ordenarPorBudgetDesc" class="ordenarButton">Ordenar por Orçamento (Decrescente)</button>
+        <table id="tabela-filmes" style="display: none;">
             <thead>
                 <tr>
                     <th>Título</th>
-                    <th>Diretor</th>
                     <th>Gênero</th>
                     <th>Ano</th>
+                    <th>Diretor</th>
                     <th>Orçamento</th>
                 </tr>
             </thead>
-            <tbody id="moviesList">
+            <tbody id="corpo-tabela">
             </tbody>
         </table>
     </div>
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

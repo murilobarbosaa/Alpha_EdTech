@@ -1,143 +1,85 @@
-const filiais = [
-    {
-        cidade: "São Paulo",
-        endereco: "Rua das Flores, 123",
-        telefone: "11 1234-5678",
-        gerente: "Carlos Silva",
-    },
-    {
-        cidade: "Rio de Janeiro",
-        endereco: "Av. Atlântica, 456",
-        telefone: "21 2345-6789",
-        gerente: "Ana Costa",
-    },
-    {
-        cidade: "Belo Horizonte",
-        endereco: "Av. Amazonas, 789",
-        telefone: "31 3456-7890",
-        gerente: "Pedro Santos",
-    },
-    {
-        cidade: "Porto Alegre",
-        endereco: "Rua dos Andradas, 1011",
-        telefone: "51 4567-8901",
-        gerente: "Juliana Rocha",
-    },
-    {
-        cidade: "Curitiba",
-        endereco: "Rua XV de Novembro, 1213",
-        telefone: "41 5678-9012",
-        gerente: "Marcos Pereira",
-    },
-    {
-        cidade: "Salvador",
-        endereco: "Av. Sete de Setembro, 1415",
-        telefone: "71 6789-0123",
-        gerente: "Luisa Oliveira",
-    },
-    {
-        cidade: "Recife",
-        endereco: "Rua da Aurora, 1617",
-        telefone: "81 7890-1234",
-        gerente: "Clara Dias",
-    },
-    {
-        cidade: "Fortaleza",
-        endereco: "Av. Beira Mar, 1819",
-        telefone: "85 8901-2345",
-        gerente: "José Araújo",
-    },
-    {
-        cidade: "Brasília",
-        endereco: "SQS 210, Bloco B",
-        telefone: "61 9012-3456",
-        gerente: "Mariana Gomes",
-    },
-    {
-        cidade: "Manaus",
-        endereco: "Av. Eduardo Ribeiro, 2021",
-        telefone: "92 0123-4567",
-        gerente: "Roberto Castro",
-    },
-];
-
 document.addEventListener('DOMContentLoaded', () => {
-    const buscarButton = document.getElementById('buscarButton');
-    buscarButton.addEventListener('click', buscarFiliais);
+    const filtrarButton = document.getElementById('filtrarButton');
+    filtrarButton.addEventListener('click', () => {
+        filtrarFilmes();
+    });
+
+    const ordenarPorBudgetAscButton = document.getElementById('ordenarPorBudgetAsc');
+    ordenarPorBudgetAscButton.addEventListener('click', () => {
+        ordenarFilmes('asc');
+    });
+
+    const ordenarPorBudgetDescButton = document.getElementById('ordenarPorBudgetDesc');
+    ordenarPorBudgetDescButton.addEventListener('click', () => {
+        ordenarFilmes('desc');
+    });
 });
 
-function buscarFiliais() {
-    const cidadeInput = document.getElementById('cidadeInput').value.trim();
-    const resultadoDiv = document.getElementById('resultado');
-    resultadoDiv.innerHTML = '';
-
-    const filialEncontrada = filiais.find(filial => filial.cidade.toLowerCase() === cidadeInput.toLowerCase());
-
-    if (filialEncontrada) {
-        const { endereco, telefone, gerente } = filialEncontrada;
-        resultadoDiv.innerHTML = `
-        <p><strong>Endereço:</strong> ${endereco}</p>
-        <p><strong>Telefone:</strong> ${telefone}</p>
-        <p><strong>Gerente:</strong> ${gerente}</p>
-      `;
-    } else {
-        resultadoDiv.textContent = 'Não há lojas na cidade buscada.';
+async function carregarFilmes() {
+    try {
+        const response = await fetch('movie_metadata.json');
+        const data = await response.json();
+        // Filtrar filmes com orçamento válido
+        filmes = data.filter(filme => filme.budget);
+        exibirFilmes(filmes);
+    } catch (error) {
+        console.error('Erro ao carregar filmes:', error);
     }
 }
 
-const movies = [
-    { title: "Movie 1", director: "Director 1", genre: "Genre 1", year: 2021, budget: 1000000 },
-    { title: "Movie 2", director: "Director 2", genre: "Genre 2", year: 2022, budget: 2000000 },
-    { title: "Movie 3", director: "Director 3", genre: "Genre 3", year: 2023, budget: 3000000 },
-    { title: "Movie 4", director: "Director 4", genre: "Genre 4", year: 2024, budget: null },
-];
+function filtrarFilmes() {
+    const minBudget = parseFloat(document.getElementById('minBudget').value);
+    const maxBudget = parseFloat(document.getElementById('maxBudget').value);
 
-function displayMovies(movies) {
-    const moviesList = document.getElementById("moviesList");
-    moviesList.innerHTML = "";
+    let filmesFiltrados = filmes;
 
-    movies.forEach(movie => {
-        const { title, director, genre, year, budget } = movie;
-        const row = `<tr>
-        <td>${title}</td>
-        <td>${director}</td>
-        <td>${genre}</td>
-        <td>${year}</td>
-        <td>${budget}</td>
-      </tr>`;
-        moviesList.innerHTML += row;
-    });
+    if (!isNaN(minBudget) && !isNaN(maxBudget)) {
+        filmesFiltrados = filmes.filter(filme => {
+            const budget = parseFloat(filme.budget);
+            return budget >= minBudget && budget <= maxBudget;
+        });
+    } else if (!isNaN(minBudget)) {
+        filmesFiltrados = filmes.filter(filme => parseFloat(filme.budget) >= minBudget);
+    } else if (!isNaN(maxBudget)) {
+        filmesFiltrados = filmes.filter(filme => parseFloat(filme.budget) <= maxBudget);
+    }
+
+    exibirFilmes(filmesFiltrados);
 }
 
-function filterMovies() {
-    const minBudget = parseFloat(document.getElementById("minBudget").value);
-    const maxBudget = parseFloat(document.getElementById("maxBudget").value);
+function ordenarFilmes(order) {
+    let filmesOrdenados = filmes.slice(); // Faz uma cópia dos filmes para não alterar o array original
 
-    let filteredMovies = movies.filter(movie => {
-        if (minBudget && movie.budget < minBudget) {
-            return false;
-        }
-        if (maxBudget && movie.budget > maxBudget) {
-            return false;
-        }
-        return true;
-    });
-
-    displayMovies(filteredMovies);
-}
-
-function sortMovies(order) {
-    let sortedMovies = [...movies];
-
-    sortedMovies.sort((a, b) => {
+    filmesOrdenados.sort((a, b) => {
+        const budgetA = parseFloat(a.budget);
+        const budgetB = parseFloat(b.budget);
         if (order === 'asc') {
-            return a.budget - b.budget;
-        } else if (order === 'desc') {
-            return b.budget - a.budget;
+            return budgetA - budgetB;
+        } else {
+            return budgetB - budgetA;
         }
     });
 
-    displayMovies(sortedMovies);
+    exibirFilmes(filmesOrdenados);
 }
 
-displayMovies(movies);
+function exibirFilmes(filmes) {
+    const corpoTabela = document.getElementById('corpo-tabela');
+    corpoTabela.innerHTML = '';
+
+    filmes.forEach(filme => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${filme.movie_title}</td>
+            <td>${filme.genres}</td>
+            <td>${filme.title_year}</td>
+            <td>${filme.director_name}</td>
+            <td>${filme.budget}</td>
+        `;
+        corpoTabela.appendChild(tr);
+    });
+
+    // Mostrar a tabela de filmes
+    const tabelaFilmes = document.getElementById('tabela-filmes');
+    tabelaFilmes.style.display = 'table';
+}
