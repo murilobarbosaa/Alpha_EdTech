@@ -2,14 +2,11 @@ document.getElementById('verifyButton').addEventListener('click', () => {
     const birthdate = document.getElementById('birthdate').value;
     const gender = document.getElementById('gender').value;
 
-    // Calcula a quantidade de dias restantes
     const daysToDeath = calculateDaysToDeath(birthdate, gender);
 
-    // Exibe o resultado
     document.getElementById('result').innerText = `Dias restantes até a morte: ${daysToDeath}`;
 });
 
-// Função para calcular os dias restantes
 function calculateDaysToDeath(birthdate, gender) {
     const birthDate = new Date(birthdate);
     const currentDate = new Date();
