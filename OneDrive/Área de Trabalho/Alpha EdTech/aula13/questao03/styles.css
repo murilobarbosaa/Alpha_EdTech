@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+#alarme {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#seletores {
+    margin-bottom: 20px;
+}
+
+#seletores label, #seletores select {
+    margin: 0 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button.desarmar {
+    background-color: #dc3545;
+}
+
+#contador {
+    margin-top: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+.tempoAcabando #contador {
+    color: #dc3545;
+    font-weight: bold;
+}
