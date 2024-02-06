@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 15 - Questão 1</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Consulta de CEP</h1>
+        <input type="text" id="cepInput" placeholder="Digite o CEP">
+        <button id="consultarBtn">Consultar</button>
+        <div id="erro" class="erro"></div>
+        <div id="resultado" class="resultado">
+            <p>Endereço: <span id="endereco"></span></p>
+            <p>Bairro: <span id="bairro"></span></p>
+            <p>Cidade: <span id="cidade"></span></p>
+            <p>Estado: <span id="estado"></span></p>
+            <p>Latitude: <span id="latitude"></span></p>
+            <p>Longitude: <span id="longitude"></span></p>
+        </div>
+        <button id="exibirMapaBtn" class="oculto">Exibir mapa</button>
+        <iframe id="mapa" class="mapa oculto"></iframe>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
