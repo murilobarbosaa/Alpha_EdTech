@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Aula 10 - Questão 5</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Gerenciador de Produtos</h1>
+
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Buscar Produto">
+            <button id="search-button">Buscar</button>
+        </div>
+
+        <form id="product-form">
+            <input type="text" id="product-name" placeholder="Nome do Produto" required>
+            <input type="text" id="product-description" placeholder="Descrição do Produto" required>
+            <input type="number" id="product-value" placeholder="Valor do Produto" required>
+            <button type="submit">Incluir Produto</button>
+        </form>
+
+        <div id="product-table-container">
+            <table id="product-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Valor</th>
+                        <th>Editar</th>
+                        <th>Apagar</th>
+                    </tr>
+                </thead>
+                <tbody id="product-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="product-details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Detalhes do Produto</h2>
+            <p><strong>ID:</strong><span id="modal-product-id"></span></p>
+            <p><strong>Nome:</strong><span id="modal-product-name"></span></p>
+            <p><strong>Descrição:</strong><span id="modal-product-description"></span></p>
+            <p><strong>Valor:</strong> R$ <span id="modal-product-value"></span></p>
+        </div>
+    </div>
+
+    <div id="edit-product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Editar Produtos</h2>
+            <form id="edit-product-form">
+                <input type="hidden" id="edit-product-id">
+                <input type="text" id="edit-product-name" placeholder="Nome do Produto" required>
+                <input type="text" id="edit-product-description" placeholder="Descrição do Produto" required>
+                <input type="number" id="edit-product-value" placeholder="Valor do Produto" required>
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

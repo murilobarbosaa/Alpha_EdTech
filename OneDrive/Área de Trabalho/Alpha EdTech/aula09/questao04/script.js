@@ -97,7 +97,6 @@ modals.forEach(modal => {
     });
 });
 
-// Edit Product Form Submission
 editProductForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
