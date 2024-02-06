@@ -1,73 +1,26 @@
 body {
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
 }
 
-.container {
-    width: 400px;
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
+#app {
     text-align: center;
-    margin-bottom: 20px;
-    color: #333333;
 }
 
-.form {
-    margin-bottom: 20px;
-}
-
-label {
-    font-weight: bold;
-    color: #333333;
-}
-
-#cidadeInput {
-    width: 100%;
+input, button {
+    margin: 10px;
     padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    border: 1px solid #cccccc;
+    font-size: 16px;
 }
 
-#buscarButton {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 6px;
+button {
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#buscarButton:hover {
-    background-color: #0056b3;
 }
 
 #resultado {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#resultado p {
-    margin: 10px 0;
-    color: #333333;
-}
-
-#resultado strong {
-    font-weight: bold;
-    margin-right: 5px;
+    margin-top: 20px;
 }

@@ -61,26 +61,18 @@ const filiais = [
     },
 ];
 
-document.addEventListener('DOMContentLoaded', () => {
-    const buscarButton = document.getElementById('buscarButton');
-    buscarButton.addEventListener('click', buscarFiliais);
-});
-
-function buscarFiliais() {
-    const cidadeInput = document.getElementById('cidadeInput').value.trim();
+document.getElementById('buscarBtn').addEventListener('click', function () {
+    const cidadeBuscada = document.getElementById('cidadeInput').value;
     const resultadoDiv = document.getElementById('resultado');
-    resultadoDiv.innerHTML = '';
+    const filial = filiais.find(filial => filial.cidade.toLowerCase() === cidadeBuscada.toLowerCase());
 
-    const filialEncontrada = filiais.find(filial => filial.cidade.toLowerCase() === cidadeInput.toLowerCase());
-
-    if (filialEncontrada) {
-        const { endereco, telefone, gerente } = filialEncontrada;
+    if (filial) {
         resultadoDiv.innerHTML = `
-        <p><strong>Endereço:</strong> ${endereco}</p>
-        <p><strong>Telefone:</strong> ${telefone}</p>
-        <p><strong>Gerente:</strong> ${gerente}</p>
+        <p>Endereço: ${filial.endereco}</p>
+        <p>Telefone: ${filial.telefone}</p>
+        <p>Gerente: ${filial.gerente}</p>
       `;
     } else {
-        resultadoDiv.textContent = 'Não há lojas na cidade buscada.';
+        resultadoDiv.textContent = 'Não há lojas na cidade buscada';
     }
-}
+});

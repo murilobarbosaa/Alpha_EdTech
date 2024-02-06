@@ -1,85 +1,41 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const filtrarButton = document.getElementById('filtrarButton');
-    filtrarButton.addEventListener('click', () => {
-        filtrarFilmes();
-    });
+// script.js
+let filmes = []; // Armazenará a lista filtrada de filmes
 
-    const ordenarPorBudgetAscButton = document.getElementById('ordenarPorBudgetAsc');
-    ordenarPorBudgetAscButton.addEventListener('click', () => {
-        ordenarFilmes('asc');
-    });
+function carregarDadosFilmes() {
+    fetch('movie_metadata.json')
+        .then(resposta => resposta.json())
+        .then(dados => {
+            filmes = dados.filter(filme => filme.budget && filme.budget.trim() !== '');
+            exibirFilmes();
+        })
+        .catch(erro => console.error('Erro ao carregar dados dos filmes:', erro));
+}
 
-    const ordenarPorBudgetDescButton = document.getElementById('ordenarPorBudgetDesc');
-    ordenarPorBudgetDescButton.addEventListener('click', () => {
-        ordenarFilmes('desc');
+function exibirFilmes() {
+    const corpoTabela = document.getElementById('corpoTabela');
+    corpoTabela.innerHTML = '';
+    filmes.forEach(filme => {
+        const linha = document.createElement('tr');
+        linha.innerHTML = `<td>${filme.movie_title.trim()}</td><td>$${Number(filme.budget).toLocaleString()}</td>`;
+        corpoTabela.appendChild(linha);
     });
-});
-
-async function carregarFilmes() {
-    try {
-        const response = await fetch('movie_metadata.json');
-        const data = await response.json();
-        // Filtrar filmes com orçamento válido
-        filmes = data.filter(filme => filme.budget);
-        exibirFilmes(filmes);
-    } catch (error) {
-        console.error('Erro ao carregar filmes:', error);
-    }
 }
 
 function filtrarFilmes() {
-    const minBudget = parseFloat(document.getElementById('minBudget').value);
-    const maxBudget = parseFloat(document.getElementById('maxBudget').value);
-
-    let filmesFiltrados = filmes;
-
-    if (!isNaN(minBudget) && !isNaN(maxBudget)) {
-        filmesFiltrados = filmes.filter(filme => {
-            const budget = parseFloat(filme.budget);
-            return budget >= minBudget && budget <= maxBudget;
-        });
-    } else if (!isNaN(minBudget)) {
-        filmesFiltrados = filmes.filter(filme => parseFloat(filme.budget) >= minBudget);
-    } else if (!isNaN(maxBudget)) {
-        filmesFiltrados = filmes.filter(filme => parseFloat(filme.budget) <= maxBudget);
-    }
-
-    exibirFilmes(filmesFiltrados);
-}
-
-function ordenarFilmes(order) {
-    let filmesOrdenados = filmes.slice(); // Faz uma cópia dos filmes para não alterar o array original
-
-    filmesOrdenados.sort((a, b) => {
-        const budgetA = parseFloat(a.budget);
-        const budgetB = parseFloat(b.budget);
-        if (order === 'asc') {
-            return budgetA - budgetB;
-        } else {
-            return budgetB - budgetA;
-        }
+    const orcamentoMinimo = document.getElementById('orcamentoMinimo').value;
+    const orcamentoMaximo = document.getElementById('orcamentoMaximo').value;
+    filmes = filmes.filter(filme => {
+        const orcamento = parseInt(filme.budget, 10);
+        return (!orcamentoMinimo || orcamento >= orcamentoMinimo) && (!orcamentoMaximo || orcamento <= orcamentoMaximo);
     });
-
-    exibirFilmes(filmesOrdenados);
+    exibirFilmes();
 }
 
-function exibirFilmes(filmes) {
-    const corpoTabela = document.getElementById('corpo-tabela');
-    corpoTabela.innerHTML = '';
-
-    filmes.forEach(filme => {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-            <td>${filme.movie_title}</td>
-            <td>${filme.genres}</td>
-            <td>${filme.title_year}</td>
-            <td>${filme.director_name}</td>
-            <td>${filme.budget}</td>
-        `;
-        corpoTabela.appendChild(tr);
+function ordenarPorOrcamento(crescente) {
+    filmes.sort((a, b) => {
+        return crescente ? a.budget - b.budget : b.budget - a.budget;
     });
-
-    // Mostrar a tabela de filmes
-    const tabelaFilmes = document.getElementById('tabela-filmes');
-    tabelaFilmes.style.display = 'table';
+    exibirFilmes();
 }
+
+document.addEventListener('DOMContentLoaded', carregarDadosFilmes);
