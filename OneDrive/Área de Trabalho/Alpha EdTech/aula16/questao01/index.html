@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações Meteorológicas</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <div id="container">
+        <select id="state-select"></select>
+        <select id="city-select"></select>
+
+        <table>
+            <thead>
+                <tr>
+                    <th id="city-table-head" colspan="7">Informações Meteorológicas</th>
+                </tr>
+                <tr>
+                    <th>Data</th>
+                    <th>Período</th>
+                    <th>Dia da Semana</th>
+                    <th>Ícone</th>
+                    <th>Resumo</th>
+                    <th>Temp. Mínima</th>
+                    <th>Temp. Máxima</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div id="message-content" class="hidden"></div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
