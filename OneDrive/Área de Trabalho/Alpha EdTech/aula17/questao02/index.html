@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar Game</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <div id="avatarInfo">
+        <p>Position: (<span id="xPos">0</span>, <span id="yPos">0</span>)</p>
+        <p>Coins: <span id="coins">0</span></p>
+        <p>Health: <span id="health">10</span></p>
+    </div>
+    <div id="controls">
+        <button onclick="moveAvatar('forward')">Forward</button>
+        <button onclick="moveAvatar('back')">Back</button>
+        <button onclick="moveAvatar('right')">Right</button>
+        <button onclick="moveAvatar('left')">Left</button>
+        <button onclick="addCoin()">Find Coin</button>
+        <button onclick="attack()">Attack</button>
+        <button onclick="receiveDamage()">Receive Damage</button>
+    </div>
+    <script src="./js/avatar.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
