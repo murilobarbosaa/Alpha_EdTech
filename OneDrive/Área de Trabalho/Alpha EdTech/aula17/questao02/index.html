@@ -4,25 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avatar Game</title>
+    <title>Aula 17 - Questão 2</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
-    <div id="avatarInfo">
-        <p>Position: (<span id="xPos">0</span>, <span id="yPos">0</span>)</p>
-        <p>Coins: <span id="coins">0</span></p>
-        <p>Health: <span id="health">10</span></p>
+    <div id="gameInfo">
+        <p id="position">Position: (0, 0)</p>
+        <p id="coins">Coins: 0</p>
+        <p id="lifePoints">Life Points: 10</p>
     </div>
+
     <div id="controls">
-        <button onclick="moveAvatar('forward')">Forward</button>
-        <button onclick="moveAvatar('back')">Back</button>
-        <button onclick="moveAvatar('right')">Right</button>
-        <button onclick="moveAvatar('left')">Left</button>
-        <button onclick="addCoin()">Find Coin</button>
-        <button onclick="attack()">Attack</button>
-        <button onclick="receiveDamage()">Receive Damage</button>
+        <button onclick="move('forward')">Forward</button>
+        <button onclick="move('back')">Back</button>
+        <button onclick="move('right')">Right</button>
+        <button onclick="move('left')">Left</button>
+        <button onclick="addCoin()">Add Coin</button>
+        <button onclick="simulateAttack()">Simulate Attack</button>
     </div>
+
     <script src="./js/avatar.js"></script>
     <script src="./js/script.js"></script>
 </body>

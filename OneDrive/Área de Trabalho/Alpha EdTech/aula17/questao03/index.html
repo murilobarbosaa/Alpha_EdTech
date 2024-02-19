@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ula 17 - Questão 3</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <div id="selection">
+        <label for="avatarType">Choose your avatar:</label>
+        <select id="avatarType" onchange="initializeAvatar(this.value)">
+            <option value="Cowboy">Cowboy</option>
+            <option value="Mago">Mago</option>
+        </select>
+    </div>
+
+    <div id="gameInfo">
+        <p id="position">Position: (0, 0)</p>
+        <p id="coins">Coins: 0</p>
+        <p id="lifePoints">Life Points: 10</p>
+        <p id="ammo" style="display:none;">Ammo: 10</p> <!-- Específico para Cowboy -->
+        <p id="spells" style="display:none;">Spells: 10</p> <!-- Específico para Mago -->
+    </div>
+
+    <div id="controls">
+        <button onclick="move('forward')">Forward</button>
+        <button onclick="move('back')">Back</button>
+        <button onclick="move('right')">Right</button>
+        <button onclick="move('left')">Left</button>
+        <button onclick="addCoin()">Add Coin</button>
+        <button onclick="avatarAttack()">Attack</button>
+        <button onclick="addAmmo()" style="display:none;">Add Ammo</button> <!-- Específico para Cowboy -->
+    </div>
+
+    <script src="./js/avatar.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

@@ -1,31 +1,40 @@
 const avatar = new Avatar(0, 0);
-updateAvatarInfo();
+const positionDisplay = document.getElementById('position');
+const coinsDisplay = document.getElementById('coins');
+const lifePointsDisplay = document.getElementById('lifePoints');
 
-function updateAvatarInfo() {
-    document.getElementById('xPos').textContent = avatar.getX();
-    document.getElementById('yPos').textContent = avatar.getY();
-    document.getElementById('coins').textContent = avatar.getCoins();
-    document.getElementById('health').textContent = avatar.healthPoints;
+function updateDisplay() {
+    positionDisplay.textContent = `Position: (${avatar.getX()}, ${avatar.getY()})`;
+    coinsDisplay.textContent = `Coins: ${avatar.getCoins()}`;
+    lifePointsDisplay.textContent = `Life Points: ${avatar.lifePoints}`;
 }
 
-function moveAvatar(direction) {
-    if (direction === 'forward') avatar.forward();
-    else if (direction === 'back') avatar.back();
-    else if (direction === 'right') avatar.right();
-    else if (direction === 'left') avatar.left();
-    updateAvatarInfo();
+function move(direction) {
+    switch (direction) {
+        case 'forward':
+            avatar.forward();
+            break;
+        case 'back':
+            avatar.back();
+            break;
+        case 'right':
+            avatar.right();
+            break;
+        case 'left':
+            avatar.left();
+            break;
+    }
+    updateDisplay();
 }
 
 function addCoin() {
     avatar.addCoin();
-    updateAvatarInfo();
+    updateDisplay();
 }
 
-function attack() {
-    console.log(`Attacked with ${avatar.attack()} damage points.`);
+function simulateAttack() {
+    avatar.receiveDamage(1);
+    updateDisplay();
 }
 
-function receiveDamage() {
-    avatar.receiveDamage(1); // Simulates receiving 1 damage point
-    updateAvatarInfo();
-}
+updateDisplay();

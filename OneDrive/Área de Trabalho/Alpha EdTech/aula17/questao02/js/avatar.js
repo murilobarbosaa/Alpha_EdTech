@@ -1,9 +1,9 @@
 class Avatar {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.coinBag = 0;
-        this.healthPoints = 10;
+    constructor(x, y, coins = 0) {
+        this.x = x >= 0 ? x : 0;
+        this.y = y >= 0 ? y : 0;
+        this.coins = coins;
+        this.lifePoints = 10;
         this.damagePoints = 1;
         this.isAlive = true;
     }
@@ -17,7 +17,7 @@ class Avatar {
     }
 
     getCoins() {
-        return this.coinBag;
+        return this.coins;
     }
 
     forward() {
@@ -37,21 +37,21 @@ class Avatar {
     }
 
     addCoin() {
-        if (this.isAlive) this.coinBag += 1;
+        if (this.isAlive) this.coins += 1;
     }
 
     attack() {
-        if (this.isAlive) return this.damagePoints;
+        return this.isAlive ? this.damagePoints : 0;
     }
 
     receiveDamage(damage) {
         if (this.isAlive) {
-            this.healthPoints -= damage;
-            if (this.healthPoints <= 0) {
+            this.lifePoints -= damage;
+            if (this.lifePoints <= 0) {
                 this.isAlive = false;
-                this.healthPoints = 0;
-                console.log("Avatar has been defeated!");
+                this.lifePoints = 0;
             }
         }
     }
 }
+
