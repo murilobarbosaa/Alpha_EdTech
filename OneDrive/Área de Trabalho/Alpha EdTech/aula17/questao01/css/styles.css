@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#sorteadorContainer, #cartelasContainer {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#cartelasContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cartela {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.cartela div {
+    padding: 10px;
+    border: 1px solid #000;
+    text-align: center;
+    cursor: pointer;
+}
+
+.cartela div.sorteado {
+    background-color: #0f0;
+}
+
+#numeroSorteado {
+    font-size: 24px;
+    margin: 20px 0;
+}
